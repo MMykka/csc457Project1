@@ -1,0 +1,153 @@
+.navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 20;
+  background: transparent;
+  border-bottom: 1px solid transparent;
+  transition: background-color 0.25s, border-color 0.25s;
+}
+
+.navbar--solid {
+  background: var(--bg);
+  border-bottom-color: var(--border);
+}
+
+.navbar-inner {
+  display: grid;
+  grid-template-columns: 1fr auto 1fr;
+  align-items: center;
+  height: var(--nav-height);
+  padding: 0 var(--gutter);
+}
+
+.brand {
+  grid-column: 2;
+  display: flex;
+  text-decoration: none;
+}
+
+.nav-group {
+  display: flex;
+  align-items: center;
+  gap: 24px;
+}
+
+.nav-group--left {
+  grid-column: 1;
+  grid-row: 1;
+}
+
+.nav-group--right {
+  grid-column: 3;
+  justify-content: flex-end;
+}
+
+.nav-link {
+  position: relative;
+  padding: 4px 0;
+  color: var(--ink);
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.02em;
+  text-transform: uppercase;
+  text-decoration: none;
+  white-space: nowrap;
+}
+
+.nav-link::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  height: 1px;
+  background: currentColor;
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 0.2s;
+}
+
+.nav-link:hover::after,
+.nav-link.active::after {
+  transform: scaleX(1);
+}
+
+/* The catalog counter mirrors "CART 0" and is not an active-state link */
+.nav-count.active::after {
+  transform: scaleX(0);
+}
+
+.nav-count:hover::after {
+  transform: scaleX(1);
+}
+
+.nav-toggle,
+.nav-count--mobile,
+.nav-menu {
+  display: none;
+}
+
+@media (max-width: 860px) {
+  .nav-group {
+    display: none;
+  }
+
+  .nav-toggle {
+    grid-column: 1;
+    grid-row: 1;
+    justify-self: start;
+    display: block;
+    padding: 4px 0;
+    border: none;
+    background: none;
+    color: var(--ink);
+    font-family: var(--font-mono);
+    font-size: 0.75rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    cursor: pointer;
+  }
+
+  .nav-count--mobile {
+    grid-column: 3;
+    justify-self: end;
+    display: block;
+  }
+
+  .nav-menu {
+    position: absolute;
+    top: var(--nav-height);
+    left: 0;
+    right: 0;
+    flex-direction: column;
+    height: calc(100vh - var(--nav-height));
+    padding: 24px var(--gutter);
+    background: var(--bg);
+    overflow-y: auto;
+  }
+
+  .nav-menu.open {
+    display: flex;
+  }
+
+  .nav-menu .nav-link {
+    padding: 16px 0;
+    border-bottom: 1px solid var(--border);
+    font-family: var(--font-sans);
+    font-size: 2rem;
+    font-weight: 600;
+    letter-spacing: -0.03em;
+    text-transform: none;
+  }
+
+  .nav-menu .nav-link::after {
+    display: none;
+  }
+
+  .nav-menu .nav-link.active {
+    color: var(--muted);
+  }
+}

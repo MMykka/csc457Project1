@@ -1,0 +1,28 @@
+.empty-state {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  max-width: 520px;
+  margin: 48px auto;
+  padding: 48px 24px;
+  border: 1px dashed #4a4a4a;
+  text-align: center;
+}
+
+.empty-state-icon {
+  display: grid;
+  place-items: center;
+  width: 52px;
+  height: 52px;
+  margin-bottom: 18px;
+  border: 1px solid var(--border-strong);
+  color: var(--ink);
+}
+
+.empty-state h2 {
+  font-size: 1.75rem;
+}
+
+.empty-state p {
+  color: var(--muted);
+}

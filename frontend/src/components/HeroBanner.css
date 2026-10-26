@@ -1,0 +1,68 @@
+.hero-banner {
+  position: relative;
+  display: flex;
+  align-items: flex-end;
+  overflow: hidden;
+}
+
+.hero-banner--full {
+  min-height: max(560px, 100vh);
+}
+
+.hero-banner--tall {
+  min-height: max(520px, 95vh);
+}
+
+.hero-banner--medium {
+  min-height: max(440px, 64vh);
+}
+
+.hero-banner-photo {
+  position: absolute;
+  inset: 0;
+}
+
+/* Darken the photo, a bit more toward the bottom where the text sits */
+.hero-banner-photo::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(180deg, rgba(0, 0, 0, 0.32) 0%, rgba(0, 0, 0, 0.3) 55%, rgba(0, 0, 0, 0.5) 100%);
+}
+
+.hero-banner-content {
+  position: relative;
+  width: 100%;
+  padding: 0 var(--gutter) 56px;
+}
+
+.hero-banner .eyebrow {
+  margin-bottom: 18px;
+}
+
+.hero-banner-title {
+  max-width: 11.5em;
+  margin: 0;
+  font-size: clamp(2.75rem, 5.4vw, 5.25rem);
+  font-weight: 600;
+  line-height: 0.98;
+  letter-spacing: -0.045em;
+}
+
+.hero-banner-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-top: 34px;
+}
+
+@media (max-width: 600px) {
+  .hero-banner--full,
+  .hero-banner--tall {
+    min-height: max(520px, 88vh);
+  }
+
+  .hero-banner-content {
+    padding-bottom: 40px;
+  }
+}

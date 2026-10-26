@@ -1,0 +1,115 @@
+.item-card {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  transition: background-color 0.2s;
+}
+
+.item-card:hover,
+.item-card:focus-within {
+  background: var(--surface-alt);
+}
+
+.item-card-link {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  padding: 22px var(--gutter) 24px;
+  color: var(--ink);
+  text-decoration: none;
+}
+
+.item-card-link:focus-visible {
+  outline-offset: -4px;
+}
+
+.item-card-tags {
+  display: flex;
+  justify-content: space-between;
+  gap: 8px;
+  min-height: 1.2em;
+}
+
+.item-card-image {
+  margin: 12px 0 20px;
+  aspect-ratio: 10 / 9;
+}
+
+.item-card-image svg,
+.item-card-image img {
+  transition: transform 0.35s ease;
+}
+
+.item-card:hover .item-card-image svg {
+  transform: rotate(-3deg) scale(1.04);
+}
+
+.item-card:hover .item-card-image img {
+  transform: scale(1.04);
+}
+
+.item-card-text {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+}
+
+.item-card-title,
+.item-card-color {
+  margin: 0;
+  font-size: 1rem;
+  font-weight: 700;
+  line-height: 1.15;
+  letter-spacing: -0.025em;
+}
+
+.item-card-meta {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 12px;
+  margin-top: 18px;
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  font-weight: 700;
+  text-transform: uppercase;
+}
+
+.item-card-brand {
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  color: var(--muted);
+}
+
+.item-card-actions {
+  display: flex;
+  border-top: 1px solid var(--border);
+}
+
+.item-card-actions a {
+  flex: 1;
+  padding: 11px 0;
+  color: var(--muted);
+  font-family: var(--font-mono);
+  font-size: 0.6875rem;
+  font-weight: 700;
+  text-align: center;
+  text-decoration: none;
+  text-transform: uppercase;
+  transition: color 0.15s, background-color 0.15s;
+}
+
+.item-card-actions a + a {
+  border-left: 1px solid var(--border);
+}
+
+.item-card-actions a:hover {
+  background: #fff;
+  color: var(--bg);
+}
+
+.item-card-actions .item-card-delete:hover {
+  background: var(--danger);
+  color: #1d1d1d;
+}

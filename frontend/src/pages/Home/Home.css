@@ -1,0 +1,116 @@
+/* Space around each product rail, like the airy gaps between Icebug rows */
+.home-block {
+  padding: 168px 0 176px;
+}
+
+.home-block--flush {
+  padding-top: 0;
+}
+
+.home-rail-state {
+  padding: 0 var(--gutter);
+}
+
+.card-skeleton {
+  display: block;
+  min-height: 456px;
+  margin: 22px var(--gutter) 24px;
+  background: linear-gradient(90deg, var(--surface-alt) 0%, #333 50%, var(--surface-alt) 100%);
+  background-size: 200% 100%;
+  animation: skeleton-shine 1.4s ease-in-out infinite;
+}
+
+@keyframes skeleton-shine {
+  to {
+    background-position: -200% 0;
+  }
+}
+
+/* "Welcome to Stride" centered statement */
+.welcome {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 16px var(--gutter) 188px;
+  text-align: center;
+}
+
+.welcome .eyebrow {
+  margin-bottom: 24px;
+}
+
+.welcome h2 {
+  max-width: 16em;
+  margin: 0 0 34px;
+  font-size: clamp(2.25rem, 4.2vw, 4rem);
+  line-height: 1.05;
+  letter-spacing: -0.045em;
+}
+
+/* Shoe finder: small photo, large photo, text */
+.finder {
+  display: grid;
+  grid-template-columns: 321fr 666fr 799fr;
+  align-items: start;
+  gap: var(--gutter);
+  padding: 0 var(--gutter) 120px;
+}
+
+.finder-small {
+  aspect-ratio: 321 / 400;
+}
+
+.finder-large {
+  aspect-ratio: 666 / 822;
+}
+
+.finder-text h2 {
+  max-width: 17.5em;
+  margin: 0 0 26px;
+  font-size: clamp(1.4rem, 2vw, 1.85rem);
+  font-weight: 700;
+  line-height: 1.12;
+  letter-spacing: -0.035em;
+}
+
+.finder-text .eyebrow {
+  margin-bottom: 18px;
+}
+
+@media (max-width: 960px) {
+  .home-block {
+    padding: 96px 0 112px;
+  }
+
+  .welcome {
+    padding-bottom: 112px;
+  }
+
+  .finder {
+    grid-template-columns: 1fr 2fr;
+  }
+
+  .finder-text {
+    grid-column: 1 / -1;
+    grid-row: 1;
+  }
+}
+
+@media (max-width: 560px) {
+  .home-block {
+    padding: 72px 0 80px;
+  }
+
+  .card-skeleton {
+    min-height: 360px;
+  }
+
+  .finder {
+    grid-template-columns: 1fr;
+    padding-bottom: 72px;
+  }
+
+  .finder-small {
+    display: none;
+  }
+}

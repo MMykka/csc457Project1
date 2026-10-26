@@ -1,0 +1,105 @@
+.delete-item {
+  padding-top: 40px;
+  padding-bottom: 120px;
+}
+
+.delete-card {
+  max-width: 680px;
+  margin: 0 auto;
+  padding: 48px 40px 40px;
+  border: 1px solid var(--border);
+  text-align: center;
+}
+
+.delete-icon {
+  display: grid;
+  place-items: center;
+  width: 52px;
+  height: 52px;
+  margin: 0 auto 24px;
+  border: 1px solid var(--danger-border);
+  color: var(--danger);
+}
+
+.delete-card h1 {
+  font-size: clamp(2.2rem, 4.6vw, 3.4rem);
+}
+
+.delete-text {
+  color: #c9c9c9;
+}
+
+/* Summary of the shoe being deleted */
+.delete-summary {
+  display: grid;
+  grid-template-columns: 200px 1fr;
+  align-items: center;
+  gap: 24px;
+  margin: 32px 0;
+  padding: 16px 24px 16px 16px;
+  border-top: 1px solid var(--border);
+  border-bottom: 1px solid var(--border);
+  text-align: left;
+}
+
+.delete-summary .item-card-brand {
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  color: var(--muted);
+}
+
+.delete-summary-info h2 {
+  margin: 6px 0 2px;
+  font-size: 1.4rem;
+}
+
+.delete-summary-info p {
+  margin: 0;
+  font-weight: 600;
+  color: #c9c9c9;
+}
+
+.delete-summary-meta {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 8px 18px;
+  margin-top: 14px;
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  color: var(--muted);
+}
+
+.delete-summary-meta strong {
+  color: var(--ink);
+}
+
+.delete-alert {
+  margin-bottom: 24px;
+  text-align: left;
+}
+
+.delete-actions {
+  display: flex;
+  justify-content: center;
+  gap: 12px;
+}
+
+@media (max-width: 560px) {
+  .delete-card {
+    padding: 32px 16px 24px;
+  }
+
+  .delete-summary {
+    grid-template-columns: 1fr;
+    padding: 16px 0;
+  }
+
+  .delete-actions {
+    flex-direction: column-reverse;
+  }
+}

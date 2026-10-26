@@ -1,0 +1,40 @@
+.api-status {
+  display: inline-flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 10px;
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  color: var(--muted);
+}
+
+.api-status-dot {
+  width: 7px;
+  height: 7px;
+  flex-shrink: 0;
+  background: var(--muted);
+}
+
+.api-status--ok .api-status-dot {
+  background: var(--success);
+}
+
+.api-status--loading .api-status-dot {
+  animation: api-pulse 1s ease-in-out infinite;
+}
+
+.api-status--failed {
+  color: var(--danger);
+}
+
+.api-status--failed .api-status-dot {
+  background: var(--danger);
+}
+
+@keyframes api-pulse {
+  50% {
+    opacity: 0.3;
+  }
+}

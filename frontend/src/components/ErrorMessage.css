@@ -1,0 +1,17 @@
+.error-message {
+  max-width: 560px;
+  margin: 48px auto;
+  padding: 32px;
+  border: 1px solid var(--danger-border);
+  background: var(--danger-soft);
+  text-align: center;
+}
+
+.error-message h2 {
+  font-size: 1.75rem;
+  color: var(--danger);
+}
+
+.error-message p {
+  color: #d6d6d6;
+}

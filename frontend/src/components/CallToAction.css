@@ -1,0 +1,23 @@
+/* Centered statement block, like "Welcome to Icebug" */
+.cta {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 24px var(--gutter);
+  text-align: center;
+}
+
+.cta h2 {
+  max-width: 16em;
+  margin-bottom: 18px;
+  font-size: clamp(2.25rem, 4.2vw, 4rem);
+  line-height: 1.05;
+  letter-spacing: -0.045em;
+}
+
+.cta p {
+  max-width: 520px;
+  margin: 0 0 32px;
+  font-size: 1.05rem;
+  color: #c9c9c9;
+}

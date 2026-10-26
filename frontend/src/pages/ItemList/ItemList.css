@@ -1,0 +1,106 @@
+.item-list {
+  padding-top: 88px;
+}
+
+.item-list-head {
+  padding: 0 var(--gutter);
+}
+
+/* Filters: one ruled bar across the page */
+.toolbar {
+  display: grid;
+  grid-template-columns: minmax(0, 2fr) minmax(0, 1fr) minmax(0, 1fr) auto;
+  align-items: end;
+  gap: 16px 24px;
+  padding: 20px var(--gutter);
+  border-top: 1px solid var(--border);
+}
+
+.search-input {
+  position: relative;
+  color: var(--muted);
+}
+
+.search-input svg {
+  position: absolute;
+  top: 50%;
+  left: 12px;
+  transform: translateY(-50%);
+  pointer-events: none;
+}
+
+.search-input input {
+  padding-left: 38px;
+}
+
+.toolbar-count {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  min-height: 44px;
+  margin: 0;
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  white-space: nowrap;
+  color: var(--muted);
+}
+
+.item-list-body {
+  padding: 0 var(--gutter) 120px;
+}
+
+/* Grid: cells divided by hairlines, edge to edge like the product rails */
+.item-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(330px, 1fr));
+  margin: 0 calc(-1 * var(--gutter));
+  border-top: 1px solid var(--border);
+}
+
+.item-grid > .item-card {
+  box-shadow:
+    1px 0 0 var(--border),
+    0 1px 0 var(--border);
+}
+
+@media (max-width: 860px) {
+  .toolbar {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .field--search {
+    grid-column: 1 / -1;
+  }
+
+  .toolbar-count {
+    grid-column: 1 / -1;
+    min-height: 0;
+  }
+}
+
+@media (max-width: 600px) {
+  .item-list {
+    padding-top: 56px;
+  }
+
+  .item-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .item-grid .item-card-link {
+    padding: 16px 12px 18px;
+  }
+
+  .item-grid .item-card-meta {
+    flex-direction: column;
+    gap: 4px;
+  }
+}
+
+@media (max-width: 380px) {
+  .toolbar {
+    grid-template-columns: 1fr;
+  }
+}

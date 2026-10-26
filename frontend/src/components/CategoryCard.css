@@ -1,0 +1,61 @@
+.category-card {
+  display: flex;
+  flex-direction: column;
+  padding: 24px var(--gutter);
+  color: var(--ink);
+  text-decoration: none;
+  transition: background-color 0.2s;
+}
+
+.category-card:hover {
+  background: var(--surface-alt);
+}
+
+.category-card:focus-visible {
+  outline-offset: -4px;
+}
+
+.category-card-media {
+  display: grid;
+  place-items: center;
+  aspect-ratio: 4 / 5;
+  overflow: hidden;
+  background: var(--surface-alt);
+}
+
+.category-card-media .shoe-image {
+  width: 92%;
+}
+
+/* Zoom the image itself, not its wrapper: a transformed wrapper isolates the
+   photo's mix-blend-mode and its black background would show through */
+.category-card-media .shoe-image img,
+.category-card-media .shoe-image svg {
+  transition: transform 0.4s ease;
+}
+
+.category-card:hover .category-card-media .shoe-image img,
+.category-card:hover .category-card-media .shoe-image svg {
+  transform: scale(1.05);
+}
+
+.category-card-text {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 12px;
+  margin-top: 18px;
+}
+
+.category-card-text h3 {
+  margin: 0;
+  font-size: 1.5rem;
+}
+
+.category-card-text span {
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  color: var(--muted);
+}

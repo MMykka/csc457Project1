@@ -1,0 +1,27 @@
+.shoe-image {
+  display: grid;
+  place-items: center;
+  width: 100%;
+  aspect-ratio: 4 / 3;
+  overflow: hidden;
+}
+
+.shoe-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  /* Product shots are on pure black: "lighten" lets the card background show through */
+  mix-blend-mode: lighten;
+  /* The product shots have wide black margins, so enlarge the shoe inside its frame */
+  scale: 1.3;
+}
+
+.shoe-image--placeholder {
+  color: var(--shoe-color);
+}
+
+.shoe-image--placeholder svg {
+  width: 82%;
+  overflow: visible;
+  transform: rotate(-3deg);
+}
